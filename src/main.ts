@@ -1,6 +1,6 @@
 import express from 'express';
 import http from 'http';
-import { Server, Socket } from 'socket.io';
+import { Server } from 'socket.io';
 
 import 'dotenv/config'
 
@@ -17,17 +17,15 @@ const io = new Server(httpServer,{
 
 app.set('io', io);
 
-// import { io } from "socket.io-client";
-
 // const socket = io({
+//   auth:{
+//      token : "token"
+//   },
 //   extraHeaders: {
-//     "accessToken": "1234",
 //      "guildI" : "111"
 //   }
 // });
 import { token , TOKEN_EXPIRED, TOKEN_INVALID } from './modules/jwt.js'
-
-//const guildChat = io.of('/gulidchat');
 
 const socketMap = new Map();
 
